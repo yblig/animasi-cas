@@ -36,6 +36,20 @@ jobs:
       - name: Android SDK (preinstalled on runner)
         run: echo "ANDROID_HOME=$ANDROID_HOME" && ls "$ANDROID_HOME"
 
+      - name: Maven mirror (hindari limit 429 Maven Central)
+        run: |
+          mkdir -p ~/.gradle/init.d
+          cat > ~/.gradle/init.d/mirror.gradle <<'EOG'
+          def mirror = { RepositoryHandler r -> r.maven { url 'https://maven-central.storage-download.googleapis.com/maven2/' } }
+          settingsEvaluated { s -> s.pluginManagement.repositories { mirror(delegate) } }
+          allprojects {
+            buildscript.repositories { mirror(delegate) }
+            repositories { mirror(delegate) }
+          }
+          EOG
+          echo "org.gradle.internal.repository.max.retries=6" >> ~/.gradle/gradle.properties
+          echo "org.gradle.internal.repository.initial.backoff=2000" >> ~/.gradle/gradle.properties
+
       - name: Install dependencies
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install; fi
