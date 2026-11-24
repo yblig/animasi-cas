@@ -1,0 +1,15 @@
+{
+  "ui_tap":       { "preset": "tap", "pitch": 1.15, "volume": 0.45 },
+  "ui_on":        { "preset": "toggle", "pitch": 1.2, "volume": 0.5 },
+  "ui_off":       { "preset": "toggle", "pitch": 0.75, "volume": 0.45 },
+  "ui_open":      { "preset": "whoosh", "pitch": 1.4, "volume": 0.35 },
+  "ui_select":    { "preset": "confirm", "pitch": 1.1, "volume": 0.5 },
+  "plug_chime":   { "layers": [ { "wave": "sine", "freq": 880, "duration": 0.9, "arp": [0, 7, 12], "arpRate": 0.09, "decay": 0.5 },
+                                { "wave": "triangle", "freq": 1760, "duration": 0.8, "arp": [0, 7, 12], "arpRate": 0.09, "volume": 0.3, "delay": 0.01 } ],
+                    "echo": [0.12, 0.35], "reverb": [0.5, 0.3], "volume": 0.7 },
+  "plug_power":   { "preset": "powerup", "pitch": 0.9, "volume": 0.65 },
+  "plug_scifi":   { "layers": [ { "wave": "saw", "freq": 160, "freqEnd": 1400, "duration": 0.55, "vibratoDepth": 0.04, "vibratoRate": 22, "decay": 0.4 },
+                                { "wave": "sine", "freq": 1400, "duration": 0.5, "delay": 0.5, "arp": [0, 12], "arpRate": 0.08, "decay": 0.6 } ],
+                    "lowpass": 5000, "echo": [0.09, 0.35], "reverb": [0.4, 0.25], "volume": 0.65 },
+  "plug_crystal": { "preset": "gem", "pitch": 0.85, "reverb": [0.6, 0.35], "volume": 0.7 }
+}

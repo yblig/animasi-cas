@@ -1,0 +1,20 @@
+{
+  "appId": "com.yblig.animasicas",
+  "appName": "Animasi Cas",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#06081a"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "launchAutoHide": true,
+      "showSpinner": false,
+      "backgroundColor": "#06081a"
+    },
+    "SystemBars": {
+      "insetsHandling": "css",
+      "hidden": false
+    }
+  }
+}
